@@ -278,8 +278,11 @@
     });
     </script>
     <script>
-    function getWord(){ $.ajax({url:'http://randomword.setgetgo.com/get.php',context: document.body})
-        .complete(function(data){$('.wordofday').html(data); }); }
+    function getWord(){ $.ajax({
+        url:'http://randomword.setgetgo.com/get.php',
+        type: 'GET',
+        dataType: 'html',
+        success: function(data){ $('.wordofday').html(data); }); }
     setTimeout('getWord();',6000);
     </script>
 
